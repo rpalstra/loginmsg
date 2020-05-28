@@ -1,0 +1,19 @@
+---
+- name: set up login messages
+  hosts: all
+  collections:
+  - rpalstra.loginmsg
+  become: yes
+  tasks:
+  - name: put a logon message before logging in
+    loginmsg:
+      text: "Hello, you are entering a Hackathon Machine!"
+      when: before
+      fqdn: true
+      state: present
+
+  - name: put a logon message after logging in
+    loginmsg:
+      text: "Hi there, welcome in a Hackathon Machine!"
+      when: after
+      fqdn: true
