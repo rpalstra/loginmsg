@@ -6,14 +6,14 @@
   become: yes
   tasks:
   - name: put a logon message before logging in
-    rpalstra.loginmsg:
+    loginmsg:
       text: "Hello, you are entering a Hackathon Machine!"
       when: before
       fqdn: true
       state: present
 
   - name: put a logon message after logging in
-    rpalstra.loginmsg:
+    loginmsg:
       text: "Hi there, welcome in a Hackathon Machine!"
       when: after
       fqdn: true
